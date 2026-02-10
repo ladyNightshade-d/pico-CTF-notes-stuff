@@ -1,0 +1,21 @@
+The server encrypted the same flag using RSA each time we connected.
+
+We were given only N (modulus), e (65537), and the ciphertext.
+
+Normally RSA is secure because N is made from two large secret primes.
+
+While comparing the N values, we noticed they were all even numbers.
+
+That means one of the primes used was 2, which should never happen.
+
+So each modulus was actually N = 2 × q.
+
+Factoring N became easy: just compute q = N ÷ 2.
+
+With p and q known, we calculated φ = (p−1)(q−1).
+
+Then we computed the private key d = e⁻¹ mod φ and decrypted the ciphertext.
+
+This revealed the flag: picoCTF{tw0_1$_pr!m3df98b648}.
+
+👉 Lesson: RSA completely fails if key generation is done incorrectly.
