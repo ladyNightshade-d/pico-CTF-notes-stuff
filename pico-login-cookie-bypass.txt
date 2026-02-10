@@ -1,0 +1,13 @@
+Challenge: picoCTF web login cookie bypass
+
+Type of attack: Privilege escalation / authentication bypass
+
+Tools used:
+- Browser DevTools
+- Cookies inspection
+
+Main trick:
+The server trusted cookie values. I changed the cookie "name" to Joe and set "isAdmin" to true. The site then treated me as an admin and revealed the flag.
+
+What I learned:
+Never trust client-side data for authentication. Cookies can be modified to escalate privileges if not validated server-side.
