@@ -1,0 +1,13 @@
+
+The webpage shows a message: “Try inspecting the page!! You might find it there”.
+
+This indicates the flag is hidden in the HTML, not visible on the page.
+
+Opening the browser Inspect / DevTools revealed a custom attribute notify_true containing a Base64 string.
+
+Decoding the Base64 string gave the flag:
+
+picoCTF{web_succ3ssfully_d3c0ded_1f832615}
+
+
+This is a classic web‑inspector challenge where the flag is hidden in the HTML source.
